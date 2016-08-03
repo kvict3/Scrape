@@ -1,11 +1,11 @@
 //Add comments
-$('.commentAdder').on('click', function(){
+$('.commentSection').on('click', function(){
 
-	var cArea = $(this).parent();
-	$(cArea).empty();
+	var userComments = $(this).parent();
+	$(userComments).empty();
 
-	$(cArea).html(`
-		<form action="/update/`+$(cArea).data('id')+`" method="post">
+	$(userComments).html(`
+		<form action="/update/` + $(userComments).data('id')+`" method="post">
 			<fieldset class="form-group">
 			    <label for="commentBox">Comment:</label>
 			    <textarea class="form-control" name="comment" id="commentBox" rows="3"></textarea>
@@ -18,16 +18,16 @@ $('.commentAdder').on('click', function(){
 
 //Delete comments
 $('.list-group-item').on('click', function(){
-	var comment = $(this).text().trim();
-	var commID  = $(this).parent().data('id');
-	var commDel = {
-		comment: comment,
-		commID: commID
+	var comments = $(this).text().trim();
+	var userID  = $(this).parent().data('id');
+	var userDelete = {
+		comments: comments,
+		userID: userID
 	}
-	console.log(commDel);
+	console.log(userDelete);
 
 	var currentURL = window.location.origin;
 
-    $.post(currentURL + "/delete", commDel);
+    $.post(currentURL + "/delete", userDelete);
   
 });
