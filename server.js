@@ -21,5 +21,5 @@ require('./controller/scraper.js')(app);
 
 
 app.listen(4000, function() {
-  console.log('App running on port 4000!');
+  console.log('Port 4000');
 });
