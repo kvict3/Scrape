@@ -17,7 +17,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-require('./controllers/news_controller.js')(app);
+require('./controller/scraper.js')(app);
 
 
 app.listen(4000, function() {
