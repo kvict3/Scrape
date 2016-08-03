@@ -10,6 +10,7 @@ var collections = ["scrapedData"];
 // mongo config
 var db = mongojs(databaseUrl, collections);
 db.on('error', function(err) {
+	// mongodb://heroku_v7pdv27s:hq5i8c4qa40e9eiuek5l4i79fa@ds031965.mlab.com:31965/heroku_v7pdv27s
   console.log('Database Error:', err);
 });
 
